@@ -1,0 +1,29 @@
+clear all 
+use "https://github.com/tvogl/econ121/raw/main/data/nlsy_deming.dta"
+
+*Question 1 
+
+keep if head_start==0 & head_start<.
+summarize 
+
+clear all 
+use "https://github.com/tvogl/econ121/raw/main/data/nlsy_deming.dta"
+
+keep if head_start==1 & head_start<.
+summarize
+
+*Question 2
+
+clear all 
+use "https://github.com/tvogl/econ121/raw/main/data/nlsy_deming.dta"
+
+reg comp_score_5to6 head_start, r 
+
+*Question 3
+
+xtreg comp_score_5to6 head_start,i(mom_id) fe
+
+areg comp_score_5to6 head_start, a(mom_id)
+
+
+*Question 3
