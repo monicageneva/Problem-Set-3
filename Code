@@ -3,14 +3,8 @@ use "https://github.com/tvogl/econ121/raw/main/data/nlsy_deming.dta"
 
 *Question 1 
 
-keep if head_start==0 & head_start<.
-summarize 
-
-clear all 
-use "https://github.com/tvogl/econ121/raw/main/data/nlsy_deming.dta"
-
-keep if head_start==1 & head_start<.
-summarize
+summarize if head_start==0 & head_start<.
+summarize if head_start==1 & head_start<.
 
 *Question 2
 
